@@ -6,68 +6,75 @@ Auteur : Evan Zougs
 Dépôt GitHub : https://github.com/ZOUGS-Evan/react-native
 API : https://evanzougs.fr/b2lp/api
 
-Présentation
+📌 Présentation
 
-B2LP Mobile est une application mobile développée avec React Native et Expo permettant aux utilisateurs de consulter des billets, de se connecter à un compte et d’accéder à des contenus dynamiques via une API REST.
+B2LP Mobile est une application mobile développée avec React Native et Expo permettant de :
+
+consulter des billets
+se connecter à un compte
+accéder à des contenus dynamiques via une API REST
 
 L’application est compatible :
 
 Android
 iOS
-Web (via React Native Web / Expo)
+Web (via Expo / React Native Web)
 
-Le backend est une API REST accessible via https://evanzougs.fr/b2lp/api.
+Le backend est une API REST disponible ici :
+👉 https://evanzougs.fr/b2lp/api
 
-Fonctionnalités
-Utilisateur non connecté
+⚙️ Fonctionnalités
+👤 Utilisateur non connecté
 Consulter la liste des billets
-Accéder aux détails d’un billet
-Accéder à l’écran de connexion / inscription
-Utilisateur connecté
-Connexion via API
+Consulter le détail d’un billet
+Accéder à l’écran de connexion
+Accéder à l’écran d’inscription
+🔐 Utilisateur connecté
+Authentification via API
 Stockage du token (AsyncStorage)
-Accès aux contenus protégés
+Accès aux routes protégées
 Déconnexion
-Technologies utilisées
+🧱 Technologies utilisées
 Couche	Technologie	Version
 Framework mobile	React Native	0.85.3
 Framework	Expo	56.0.8
 CLI Expo	Expo CLI	56.1.13
-Interface UI	React	19.2.3
+React	React	19.2.3
 Navigation	React Navigation	7.2.5
-Navigation Stack	Native Stack	7.16.0
+Stack navigation	Native Stack	7.16.0
 Stockage local	AsyncStorage	3.1.1
 Gestures	React Native Gesture Handler	2.31.2
-Animations	React Native Reanimated	4.3.1
-UI Safe Area	React Native Safe Area Context	5.7.0
+Animations	Reanimated	4.3.1
+Safe Area	Safe Area Context	5.7.0
 Screens	React Native Screens	4.25.2
 Web support	React Native Web	0.21.2
 Runtime	Node.js	22.21.1
 Package manager	npm	10.9.4
-Architecture
+🏗️ Architecture du projet
 
 L’application suit une architecture simple et modulaire :
 
-Navigation
-Navigation centralisée dans src/navigation/AppNavigator.tsx
-Screens (écrans)
-HomeScreen → liste des billets
-LoginScreen → connexion utilisateur
-RegisterScreen → inscription utilisateur
-BilletScreen → détail d’un billet
-Components (UI réutilisable)
-Header → barre de navigation
-Post → affichage d’un billet
-Services (API)
-billetService.ts → gestion des appels API
-Lib
+📂 Navigation
+src/navigation/AppNavigator.tsx
+→ Gestion des écrans
+📱 Screens (pages)
+HomeScreen.tsx → liste des billets
+LoginScreen.tsx → connexion utilisateur
+RegisterScreen.tsx → inscription utilisateur
+BilletScreen.tsx → détail d’un billet
+🧩 Components
+Header.tsx → barre de navigation
+Post.tsx → affichage d’un billet
+🌐 Services
+billetService.ts → appels API
+🔐 Lib
 auth.ts → gestion du token (AsyncStorage)
-Utils
+🛠 Utils
 fonctions utilitaires globales
-Structure du projet
+📁 Structure du projet
 react-b2lp-mobile/
 │
-├── assets/                     # Images, icônes, fonts
+├── assets/
 │
 ├── src/
 │   ├── components/
@@ -75,10 +82,10 @@ react-b2lp-mobile/
 │   │   └── Post.tsx
 │   │
 │   ├── lib/
-│   │   └── auth.ts            # Authentification (token)
+│   │   └── auth.ts
 │   │
 │   ├── navigation/
-│   │   └── AppNavigator.tsx   # Navigation principale
+│   │   └── AppNavigator.tsx
 │   │
 │   ├── screens/
 │   │   ├── HomeScreen.tsx
@@ -87,46 +94,40 @@ react-b2lp-mobile/
 │   │   └── BilletScreen.tsx
 │   │
 │   ├── services/
-│   │   └── billetService.ts   # Appels API
+│   │   └── billetService.ts
 │   │
 │   ├── types/
 │   └── utils/
 │
-├── App.tsx                    # Entry point
-├── index.ts                   # Bootstrap Expo
-├── app.json                   # Config Expo
+├── App.tsx
+├── index.ts
+├── app.json
 ├── package.json
 ├── tsconfig.json
 └── LICENSE
-API utilisée
-
-Base URL :
-
+🌐 API
+Base URL
 https://evanzougs.fr/b2lp/api
-Endpoints principaux
+Endpoints
 Méthode	Endpoint	Description
 GET	/billets	Liste des billets
 GET	/billets/{id}	Détail d’un billet
 POST	/login	Connexion
 POST	/register	Inscription
 GET	/user	Utilisateur connecté
-Authentification
-
-L’authentification repose sur un système de token Bearer.
-
-Fonctionnement :
-Login via API
-Réponse : token brut
-Stockage dans AsyncStorage
+🔐 Authentification
+Système basé sur token Bearer
+Token reçu après login
+Stockage via AsyncStorage
 Ajout automatique dans les requêtes :
 Authorization: Bearer <token>
-Installation du projet
+🚀 Installation
 Cloner le projet
 git clone https://github.com/ZOUGS-Evan/react-native.git
 cd react-b2lp-mobile
 Installer les dépendances
 npm install
-Lancement du projet
+▶️ Lancement
 npm start
 Android
 npm run android
@@ -134,19 +135,8 @@ iOS
 npm run ios
 Web
 npm run web
-Commandes utiles
-Commande	Description
-npm start	Lance Expo
-npm run android	Lance sur Android
-npm run ios	Lance sur iOS
-npm run web	Lance sur navigateur
-Sécurité
-Authentification via token Bearer
-Stockage sécurisé avec AsyncStorage
-Routes protégées côté API
-Validation des données côté backend
-Auteur
+👤 Auteur
 
 Evan Zougs
 
-Projet développé dans le cadre d’un projet React Native / Expo.
+Projet réalisé avec React Native + Expo.
